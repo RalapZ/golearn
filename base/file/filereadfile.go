@@ -1,28 +1,37 @@
 package main
 
 import (
-	"errors"
+	"bufio"
 	"fmt"
 	"os"
 )
 
 func main() {
-	filename := "openfile.txt"
-	FileR, err := os.OpenFile(filename, os.O_RDONLY, 0755)
-	err = errors.New("this is an define error")
-	//fmt.Println(err.Error())
-	if err != nil {
-		//fmt.Println("test")
-		//patherr,_:= err.(*os.PathError)
-		//fmt.Println(patherr)
-
-		fmt.Errorf("%s", err.Error())
-		panic(err.Error())
-		//fmt.Errorf("%s",err.Error())
+	filename:="./bash/file/readfile.txt"
+	defer func(){
+		r:=recover()
+		if r ==nil{
+			return
+		}
+		if fileerr,ok:=r.(*os.PathError);ok{
+		    fmt.Println(fileerr)
+		}
+	}()
+	FileR,_:=os.OpenFile(filename,os.O_RDONLY,0755)
+	//if err !=nil{
+	//	panic
+	//}
+	fileBuf:=bufio.NewReader(FileR)
+	for {
+		str, err := fileBuf.ReadString('\n')    // 循环读取一行
+		if err != nil {
+			fmt.Println("read string failed, err: ", err)
+			return
+		}
+		fmt.Println("read string is %s: ", str)
 	}
+	//for {}
 
-	//test,errz
-	defer FileR.Close()
-	//filebuf,_:=ioutil.ReadAll(FileR)
-	//fmt.Println(string(filebuf))
+
+	//fmt.Println(string(fileBuf)
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
 
 func HandlerRecover(){
@@ -19,9 +20,24 @@ func HandlerRecover(){
 		}
 	}()
 	//panic(errors.New("this is a test error"))
-	fmt.Println("te")
+	//fmt.Println("te")
+}
+func test(){
+	a:=[3]int{1,2,3}
+	b:=4
+	fmt.Println(a)
+	defer func(){
+		r:=recover()
+		if err,ok:=r.(error);ok{
+			log.Println(err)
+
+		}
+	}()
+	fmt.Println(a[b])
+
 }
 
 func main() {
 	HandlerRecover()
+	test()
 }

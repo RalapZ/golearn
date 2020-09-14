@@ -19,6 +19,17 @@ type QiYchatStu struct {
 	expires_in   int
 }
 
+type SkywalkInfo struct {
+	ScopeId      int    `json:scopeId`
+	Scope        string `json:scope`
+	Name         string `json:name`
+	id0          string
+	id1          string
+	RuleName     string `json:ruleName`
+	AlarmMessage string `json:alarmMessage`
+	StartTime    string `json:startTime`
+}
+
 func TokenGet(CorpId string, CorpSecret string) string {
 	client := &http.Client{}
 	data := make(map[string]interface{})
@@ -34,23 +45,19 @@ func TokenGet(CorpId string, CorpSecret string) string {
 	body, _ := ioutil.ReadAll(resp.Body)
 	qistu := QiYchatStu{}
 	_ = json.Unmarshal(body, &qistu)
-	//fmt.Println(qistu.Access_token)
-	//fmt.Printf("%T",qistu.Access_token)
 	return qistu.Access_token
 }
 
-func main() {
-
-	corpid := "ww97af1eab5d2add3c"
-	corpsecret := "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
-	Token := TokenGet(corpid, corpsecret)
-
+func SendMessage(CorpId string, CorpSecret string, M SkywalkInfo) {
+	Token := TokenGet(CorpId, CorpSecret)
+	client := &http.Client{}
 	message := make(map[string]interface{})
 	message["touser"] = "abelzhu|zhurongjia"
 	message["msgtype"] = "text"
 	message["agentid"] = "1000002"
+	str := "服务名称:" + M.Name + "\n告警类型:" + M.Scope + "\n告警规则:" + M.RuleName + "" + "\n告警信息:" + M.AlarmMessage
 	message["text"] = map[string]interface{}{
-		"content": "qiyeWeChat message",
+		"content": str,
 	}
 	message["safe"] = "0"
 	Mdata, _ := json.Marshal(message)
@@ -63,4 +70,20 @@ func main() {
 	MMessage, _ := ioutil.ReadAll(resp1.Body)
 	fmt.Println("=============")
 	fmt.Println(string(MMessage))
+}
+func AlarmFunc(w http.ResponseWriter, r *http.Request) {
+	test, _ := ioutil.ReadAll(r.Body)
+	var DataInfo []SkywalkInfo
+	json.Unmarshal(test, &DataInfo)
+	fmt.Println(DataInfo)
+	for _, Message := range DataInfo {
+		corpid := "ww97af1eab5d2add3c"
+		corpsecret := "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
+		SendMessage(corpid, corpsecret, Message)
+	}
+}
+
+func main() {
+	http.HandleFunc("/alarm", AlarmFunc)
+	http.ListenAndServe(":9000", nil)
 }

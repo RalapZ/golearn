@@ -9,6 +9,8 @@ import (
 )
 
 func WebResponse(Resp http.ResponseWriter, Req *http.Request) {
+	fmt.Println("Url.path:", Req.URL.Path)
+	Req.URL.Query()
 	//fmt.Println(Req.RequestURI(("/list")))
 	WebPath := Req.URL.Path[len("/list/"):]
 	//defer func(){
@@ -17,7 +19,7 @@ func WebResponse(Resp http.ResponseWriter, Req *http.Request) {
 	//		log.Println(Errinf.Path,Errinf.Err,Errinf.Op)
 	//	}
 	//}()
-	fmt.Println(string(WebPath))
+	//fmt.Println(string(WebPath))
 	fileR, err := os.OpenFile(string(WebPath), os.O_EXCL|os.O_RDONLY, 0755)
 	defer fileR.Close()
 	if err != nil {

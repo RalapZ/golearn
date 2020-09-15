@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 )
 
@@ -59,6 +60,7 @@ func SendMessage(CorpId string, CorpSecret string, M SkywalkInfo) {
 	message["text"] = map[string]interface{}{
 		"content": str,
 	}
+	log.Println(str)
 	message["safe"] = "0"
 	Mdata, _ := json.Marshal(message)
 	//fmt.Println(string(Mdata))
@@ -75,7 +77,7 @@ func AlarmFunc(w http.ResponseWriter, r *http.Request) {
 	test, _ := ioutil.ReadAll(r.Body)
 	var DataInfo []SkywalkInfo
 	json.Unmarshal(test, &DataInfo)
-	fmt.Println(DataInfo)
+	//fmt.Println(DataInfo)
 	for _, Message := range DataInfo {
 		corpid := "ww97af1eab5d2add3c"
 		corpsecret := "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"

@@ -74,6 +74,7 @@ func SendMessage(CorpId string, CorpSecret string, M SkywalkInfo) {
 	fmt.Println(string(MMessage))
 }
 func AlarmFunc(w http.ResponseWriter, r *http.Request) {
+
 	test, _ := ioutil.ReadAll(r.Body)
 	var DataInfo []SkywalkInfo
 	json.Unmarshal(test, &DataInfo)

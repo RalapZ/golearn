@@ -1,9 +1,9 @@
-dingding:
-
-
 qiye:
-  corpid:
-  corpsecret:
-    - user:
+  auth:
+    corpid:
+    corpsecret:
+  agentid:
+  user:
+    - zhurongjia
 
-    - test:
+

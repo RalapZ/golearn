@@ -68,10 +68,12 @@ func sendMsg(w http.ResponseWriter, r *http.Request) {
 			fmt.Println(str)
 
 			//拼接钉钉所需的消息格式
+
 			msg := strings.NewReader(fmt.Sprintf(template, str))
 			tr := &http.Transport{
 				TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 			}
+
 			client := http.Client{Transport: tr}
 			req, err := http.NewRequest("POST", dingdingUrl, msg)
 			req.Header.Add("Content-Type", "application/json")

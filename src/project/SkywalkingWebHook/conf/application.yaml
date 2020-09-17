@@ -1,9 +1,7 @@
-qiye:
-  auth:
-    corpid:
-    corpsecret:
-  agentid:
-  user:
-    - zhurongjia
-
-
+tencent:
+        auth:
+          corpid: "test1"
+          corpsecret: "test2"
+        agentid: test
+        user:
+          - zhurongjia

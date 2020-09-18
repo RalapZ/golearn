@@ -22,10 +22,27 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 )
+
+type AuthStr struct {
+	CorpInfo   string `yaml:"corpid"`
+	CorpSecret string `yaml:"corpsecret"`
+}
+
+type TencentConfig struct {
+	Auth    AuthStr  `yaml:"auth"`
+	Agentid string   `yaml:"agentid"`
+	User    []string `yaml:"user"`
+}
+
+type Config struct {
+	Tencent TencentConfig `yaml:"tencent"`
+}
 
 type CorpInfo struct {
 	corpid     string
@@ -67,13 +84,22 @@ func TokenGet(CorpId string, CorpSecret string) string {
 	return qistu.Access_token
 }
 
-func SendMessage(CorpId string, CorpSecret string, M SkywalkInfo) {
+//func SendMessage(CorpId string, CorpSecret string, M SkywalkInfo,conf Config) {
+func SendMessage(M SkywalkInfo, conf Config) {
+	CorpId := conf.Tencent.Auth.CorpInfo
+	CorpSecret := conf.Tencent.Auth.CorpSecret
 	Token := TokenGet(CorpId, CorpSecret)
 	client := &http.Client{}
 	message := make(map[string]interface{})
-	message["touser"] = "abelzhu|zhurongjia"
+	//fmt.Println(&conf)
+	var user string
+	for _, v := range conf.Tencent.User {
+		user = v + "|" + user
+	}
+	//fmt.Println(user)
+	message["touser"] = user
 	message["msgtype"] = "text"
-	message["agentid"] = "1000002"
+	message["agentid"] = conf.Tencent.Agentid
 	str := "服务名称:" + M.Name + "\n告警类型:" + M.Scope + "\n告警规则:" + M.RuleName + "" + "\n告警信息:" + M.AlarmMessage
 	message["text"] = map[string]interface{}{
 		"content": str,
@@ -81,30 +107,66 @@ func SendMessage(CorpId string, CorpSecret string, M SkywalkInfo) {
 	log.Println(str)
 	message["safe"] = "0"
 	Mdata, _ := json.Marshal(message)
-	//fmt.Println(string(Mdata))
 	urlR := "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=" + Token
 	req1, _ := http.NewRequest("POST", urlR, bytes.NewReader(Mdata))
-	//req1.Header.("access_token",qistu.Access_token)
-	fmt.Println(req1.Header)
+	defer req1.Body.Close()
+	//fmt.Println(req1.Header)
 	resp1, _ := client.Do(req1)
 	MMessage, _ := ioutil.ReadAll(resp1.Body)
-	fmt.Println("=============")
+	//fmt.Println("=============")
 	fmt.Println(string(MMessage))
 }
-func AlarmFunc(w http.ResponseWriter, r *http.Request) {
 
-	test, _ := ioutil.ReadAll(r.Body)
-	var DataInfo []SkywalkInfo
-	json.Unmarshal(test, &DataInfo)
-	//fmt.Println(DataInfo)
-	for _, Message := range DataInfo {
-		corpid := "ww97af1eab5d2add3c"
-		corpsecret := "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
-		SendMessage(corpid, corpsecret, Message)
+func (conf *Config) ReadConfig(filename string) {
+	//filename:="src/project/SkywalkingWebHook/conf/application.yaml1"
+	file, err := ioutil.ReadFile(filename)
+	if err != nil {
+		if error, ok := err.(*os.PathError); ok {
+			log.Println(error.Op, "file not exist", error.Err)
+			panic(error.Error())
+			//os.Exit(0)
+		}
+	}
+	yaml.Unmarshal(file, &conf)
+}
+
+func MainFunc(conf Config) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		test, _ := ioutil.ReadAll(r.Body)
+		var DataInfo []SkywalkInfo
+		json.Unmarshal(test, &DataInfo)
+		//fmt.Println(&conf)
+		for _, Message := range DataInfo {
+			//corpid := "ww97af1eab5d2add3c"
+			//corpsecret := "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
+			//SendMessage(corpid, corpsecret, Message,conf)
+			SendMessage(Message, conf)
+		}
 	}
 }
 
+//func MainFunc(conf Config) func(w http.ResponseWriter, r *http.Request) {
+//	return func(w http.ResponseWriter, r *http.Request){
+//		test, _ := ioutil.ReadAll(r.Body)
+//		var DataInfo []SkywalkInfo
+//		json.Unmarshal(test, &DataInfo)
+//		//fmt.Println(&conf)
+//		for _, Message := range DataInfo {
+//			//corpid := "ww97af1eab5d2add3c"
+//			//corpsecret := "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
+//			//SendMessage(corpid, corpsecret, Message,conf)
+//			SendMessage( Message,conf)
+//		}
+//	}
+//}
+
 func main() {
-	http.HandleFunc("/alarm", AlarmFunc)
+	filename := "src/project/SkywalkingWebHook/conf/application.yaml"
+	var conf Config
+	//str,_:=os.Getwd()
+	//fmt.Println(string(str))
+	conf.ReadConfig(filename)
+	fmt.Println(conf)
+	http.HandleFunc("/alarm", MainFunc(conf))
 	http.ListenAndServe(":9000", nil)
 }

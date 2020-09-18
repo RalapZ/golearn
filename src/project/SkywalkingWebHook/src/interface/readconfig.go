@@ -26,18 +26,11 @@ import (
 	"os"
 )
 
-//tencent:
-//	auth:
-//		corpid:
-//		corpsecret:
-//	agentid:test
-//	user:
-//		- zhurongjia
-
 type AuthStr struct {
 	CorpInfo   string `yaml:"corpid"`
 	CorpSecret string `yaml:"corpsecret"`
 }
+
 type TencentConfig struct {
 	Auth    AuthStr  `yaml:"auth"`
 	Agentid string   `yaml:"agentid"`
@@ -48,22 +41,22 @@ type Config struct {
 	Tencent TencentConfig `yaml:"tencent"`
 }
 
-func (conf *Config) ReadConfig(filename string) *Config {
+func (conf *Config) ReadConfig(filename string) {
 	//filename:="src/project/SkywalkingWebHook/conf/application.yaml1"
 	file, err := ioutil.ReadFile(filename)
 	if err != nil {
 		if error, ok := err.(*os.PathError); ok {
 			log.Println(error.Op, "file not exist", error.Err)
 		}
-		return nil
 	}
 	yaml.Unmarshal(file, &conf)
-	return conf
 }
 
 func main() {
-	var conf *Config
+	var conf Config
+	str, _ := os.Getwd()
+	fmt.Println(string(str))
 	filename := "src/project/SkywalkingWebHook/conf/application.yaml"
-	conf = conf.ReadConfig(filename)
+	conf.ReadConfig(filename)
 	fmt.Println(conf)
 }

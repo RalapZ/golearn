@@ -1,8 +1,9 @@
 tencent:
-        auth:
-          corpid: "ww97af1eab5d2add3c"
-          corpsecret: "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
-        agentid: "1000002"
-        user:
-          - zhurongjia
-          - likangwei
+                    auth:
+                      corpid: "ww97af1eab5d2add3c"
+                      corpsecret: "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
+                    agentid: "1000002"
+                    user:
+                      - zhurongjia
+                      - likangwei
+                    listenport: "9000"

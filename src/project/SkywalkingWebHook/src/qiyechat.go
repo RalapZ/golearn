@@ -26,6 +26,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	_ "net/http/pprof"
 	"os"
 )
 
@@ -41,7 +42,8 @@ type TencentConfig struct {
 }
 
 type Config struct {
-	Tencent TencentConfig `yaml:"tencent"`
+	Tencent    TencentConfig `yaml:"tencent"`
+	Listenport string        `yaml:"listenport"`
 }
 
 type CorpInfo struct {
@@ -145,28 +147,14 @@ func MainFunc(conf Config) func(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-//func MainFunc(conf Config) func(w http.ResponseWriter, r *http.Request) {
-//	return func(w http.ResponseWriter, r *http.Request){
-//		test, _ := ioutil.ReadAll(r.Body)
-//		var DataInfo []SkywalkInfo
-//		json.Unmarshal(test, &DataInfo)
-//		//fmt.Println(&conf)
-//		for _, Message := range DataInfo {
-//			//corpid := "ww97af1eab5d2add3c"
-//			//corpsecret := "iq2IyxRcY3oCHHTFg2U2o3UQGHzXIWkKIAgfKQFdhxw"
-//			//SendMessage(corpid, corpsecret, Message,conf)
-//			SendMessage( Message,conf)
-//		}
-//	}
-//}
-
 func main() {
 	filename := "src/project/SkywalkingWebHook/conf/application.yaml"
 	var conf Config
 	//str,_:=os.Getwd()
 	//fmt.Println(string(str))
 	conf.ReadConfig(filename)
-	fmt.Println(conf)
+	//fmt.Println(conf)
+	//fmt.Println(conf.Listenport)
 	http.HandleFunc("/alarm", MainFunc(conf))
-	http.ListenAndServe(":9000", nil)
+	http.ListenAndServe(fmt.Sprintf(":%s", conf.Listenport), nil)
 }

@@ -1,24 +1,27 @@
 package main
 
-import "fmt"
-
-type Stud struct {
-	Name string
-	Sex  string
-	Age  int
-}
-
-func (stu Stud) String() string {
-	return "Print " + stu.Name + stu.Sex
-}
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	//a := "tesasdfasdfasdfdfasd"
-	//b := a[len("tes"):]
-	//fmt.Println(b)
-	stu := Stud{"ralap", "male", 18}
-	//stu.Name= "test"
-	fmt.Println(stu)
-	fmt.Println(stu.Age)
-
+	// 合起来写
+	go func() {
+		i := 0
+		for {
+			i++
+			fmt.Printf("new goroutine: i = %d\n", i)
+			time.Sleep(time.Second)
+		}
+	}()
+	i := 0
+	for {
+		i++
+		fmt.Printf("main goroutine: i = %d\n", i)
+		time.Sleep(time.Second)
+		if i == 2 {
+			break
+		}
+	}
 }

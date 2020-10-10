@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 type Avltree struct {
 	value     int
 	hight     int
@@ -23,10 +21,19 @@ func (node *Avltree) FindPar(RootPar *Avltree, Root *Avltree) *Avltree {
 }
 
 func (node *Avltree) RightTor(Root *Avltree, NodeParent *Avltree) {
-	NodeGraP := NodeParent.FindPar(nil, Root)
+	//NodeGraP := NodeParent.FindPar(nil, Root)
 	var TempNode *Avltree
-	fmt.Println(NodeGraP, TempNode)
-
+	TempNode = node
+	if NodeParent.LeftNode == node {
+		NodeParent.LeftNode = node.LeftNode
+		NodeParent.LeftNode.RightNode = TempNode
+	}
+	//fmt.Println(NodeGraP, TempNode)
+	//if NodeGraP.RightNode==NodeParent{
+	//	NodeGraP.RightNode=node
+	//	node.LeftNode
+	//
+	//}
 }
 
 func main() {

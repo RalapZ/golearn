@@ -1,17 +1,24 @@
 package main
 
-import (
-	"fmt"
-	"os"
-)
+import "fmt"
+
+type People interface {
+	Speak(string) string
+}
+
+type Student struct{}
+
+func (stu *Student) Speak(think string) (talk string) {
+	if think == "sb" {
+		talk = "你是个大帅比"
+	} else {
+		talk = "您好"
+	}
+	return
+}
 
 func main() {
-	a := struct{}{}
-	b := struct{}{}
-	//if a == b {
-	fmt.Printf("%p,%p", &a, &b)
-	k, err := fmt.Printf("%p,%p\n", &a, &b)
-	fmt.Fprintln(os.Stdout, k, err)
-	//fmt.Sprint
-	//}
+	var peo People = &Student{}
+	think := "bitch"
+	fmt.Println(peo.Speak(think))
 }

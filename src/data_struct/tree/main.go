@@ -16,7 +16,7 @@ func (node * Avltree) FindPar(RootPar *Avltree,Root *Avltree) *Avltree{
 	}else if node.value<Root.value{
 		return node.FindPar(Root,Root.LeftNode)
 	}else{
-		return RootPa
+		return RootPar
 	}
 }
 

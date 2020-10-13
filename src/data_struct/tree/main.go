@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Avltree struct {
 	value     int
 	hight     int
@@ -21,7 +23,7 @@ func (node *Avltree) FindPar(RootPar *Avltree, Root *Avltree) *Avltree {
 }
 
 //右旋转
-func (node *Avltree) RightTor(NodeParent *Avltree) {
+func (node *Avltree) RightRotate(NodeParent *Avltree) {
 	//NodeGraP := NodeParent.FindPar(nil, Root)
 	var TempNode *Avltree
 	TempNode = node.LeftNode
@@ -31,19 +33,19 @@ func (node *Avltree) RightTor(NodeParent *Avltree) {
 	NodeParent.LeftNode = TempNode
 }
 
-func (node *Avltree) Tor(NodeParent *Avltree) {
+func (node *Avltree) RRRotate(NodeParent *Avltree) {
 	if node.LeftNode.RightNode == nil {
-		node.RightTor(NodeParent)
+		node.RightRotate(NodeParent)
 	} else {
 		TempNode := node.LeftNode
 		node.LeftNode = TempNode.RightNode
 		node.LeftNode.LeftNode = TempNode
 		TempNode.RightNode = nil
-		node.RightTor(NodeParent)
+		node.RightRotate(NodeParent)
 	}
 }
 
-func (node *Avltree) LeftTor(NodeParent *Avltree) {
+func (node *Avltree) LeftRotate(NodeParent *Avltree) {
 	var TempNode *Avltree
 	TempNode = node.RightNode
 	node.RightNode = TempNode.LeftNode
@@ -74,6 +76,26 @@ func (node *Avltree) LeftSecTor(Nodeparent *Avltree) {
 	//node.LeftLeftTor(Nodeparent)
 }
 
+func (Root *Avltree) MidOrder() {
+	if Root != nil {
+		fmt.Println(Root.value)
+		Root.LeftNode.MidOrder()
+		Root.RightNode.MidOrder()
+	}
+}
+
 func main() {
+	var Root *Avltree
+	Root = &Avltree{value: 5}
+	Root.RightNode = &Avltree{value: 6}
+	Root.LeftNode = &Avltree{value: 3}
+	Root.LeftNode.LeftNode = &Avltree{value: 2}
+	Root.LeftNode.LeftNode.RightNode = &Avltree{value: 1}
+
+	Root.MidOrder()
+	fmt.Println("=====")
+	Root.LeftNode.Tor(Root)
+	Root.MidOrder()
+	//fmt.Println(Root)
 
 }

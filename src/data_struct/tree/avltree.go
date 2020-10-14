@@ -44,8 +44,7 @@ func RightRotate(Root *TreeNode) *TreeNode {
 	TempNode = Root.LeftNode
 	Root.LeftNode = TempNode.RightNode
 	TempNode.RightNode = Root
-	//TempNode.RightNode.height=UpdateHeight(TempNode.RightNode)
-	//TempNode.height=UpdateHeight(TempNode)
+	TempNode.RightNode.height = UpdateHeight(TempNode.RightNode)
 	return TempNode
 }
 func LeftRotate(Root *TreeNode) *TreeNode {
@@ -53,8 +52,7 @@ func LeftRotate(Root *TreeNode) *TreeNode {
 	TempNode = Root.RightNode
 	Root.RightNode = TempNode.LeftNode
 	TempNode.LeftNode = Root
-	//TempNode.LeftNode.height=UpdateHeight(TempNode.LeftNode)
-	//TempNode.height=UpdateHeight(TempNode)
+	TempNode.LeftNode.height = UpdateHeight(TempNode.LeftNode)
 	return TempNode
 }
 
@@ -75,30 +73,25 @@ func (Root *TreeNode) Add(value int) *TreeNode {
 		Root.RightNode = Root.RightNode.Add(value)
 		BalanceF := BalanceFactor(Root)
 		if BalanceF == -2 {
-			LeftNode := Root.RightNode
-			BF := BalanceFactor(LeftNode)
+			RightNode := Root.RightNode
+			BF := BalanceFactor(RightNode)
 			if BF == 1 {
 				Root.RightNode = RightRotate(Root.RightNode)
-				Root.RightNode.height = UpdateHeight(Root.RightNode)
 			}
 			Root = LeftRotate(Root)
-			//Root.height=UpdateHeight(Root)
-			//Root.RightNode.height=UpdateHeight(Root.RightNode)
 		}
 	} else {
 		Root.LeftNode = Root.LeftNode.Add(value)
 		BalanceF := BalanceFactor(Root)
 		if BalanceF == 2 {
-			RightNode := Root.RightNode
-			BF := BalanceFactor(RightNode)
+			LeftNode := Root.LeftNode
+			BF := BalanceFactor(LeftNode)
 			if BF == -1 {
 				Root.LeftNode = RightRotate(Root.LeftNode)
-				Root.LeftNode.height = UpdateHeight(Root.LeftNode)
 			}
 			Root = RightRotate(Root)
-			//Root.height = UpdateHeight(Root)
-			//Root.LeftNode.height=UpdateHeight(Root.LeftNode)
 		}
+
 	}
 	//fmt.Println(Root)
 	Root.height = UpdateHeight(Root)

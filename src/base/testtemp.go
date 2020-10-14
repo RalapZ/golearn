@@ -2,9 +2,14 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"runtime/trace"
 )
 
 func main() {
-	var a, b float64 = 0.1, 0.2
-	fmt.Println(a + b)
+	f, _ := os.Create("a.out")
+	defer f.Close()
+	trace.Start(f)
+	defer trace.Stop()
+	fmt.Println("hello ")
 }

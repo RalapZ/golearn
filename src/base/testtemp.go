@@ -1,15 +1,19 @@
 package main
 
-import (
-	"fmt"
-	"os"
-	"runtime/trace"
-)
+import "fmt"
+
+//type T struct{
+//	v int
+//}
+
+func (k *int) add() {
+	//k=&T{}
+	*k = 1
+	//return t
+}
 
 func main() {
-	f, _ := os.Create("a.out")
-	defer f.Close()
-	trace.Start(f)
-	defer trace.Stop()
-	fmt.Println("hello ")
+	var t *int
+	*t = 1
+	fmt.Println(*t)
 }

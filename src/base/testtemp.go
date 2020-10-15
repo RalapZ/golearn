@@ -1,19 +1,13 @@
 package main
 
-import "fmt"
-
-//type T struct{
-//	v int
-//}
-
-func (k *int) add() {
-	//k=&T{}
-	*k = 1
-	//return t
+type set struct {
 }
 
+func (n *set) test() string {
+	return ""
+}
 func main() {
-	var t *int
-	*t = 1
-	fmt.Println(*t)
+	var _ = set{}.test()
+	var s set
+	var _ = s.test()
 }

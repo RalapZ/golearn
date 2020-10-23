@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func quicksort(arr []int) []int {
-
 	Len := len(arr)
 	if Len == 0 {
 		return arr
@@ -11,7 +10,6 @@ func quicksort(arr []int) []int {
 	var temp int
 	temp = arr[0]
 	low := 0
-
 	for high := Len - 1; high > low; high-- {
 		if low == high {
 			arr[low] = temp

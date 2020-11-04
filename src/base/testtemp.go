@@ -1,19 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"runtime/debug"
-)
+import "gopkg.in/yaml.v2"
 
-func test2() {
-	fmt.Println("=====")
-	fmt.Println(string(debug.Stack()))
-	debug.PrintStack()
-}
-func test1() {
-	test2()
+type a struct {
+	Name string `yaml:"name"`
 }
 
 func main() {
-	test1()
+
 }

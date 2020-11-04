@@ -21,6 +21,7 @@ func main() {
 func work() {
 	// Generate some allocations
 	m := map[string][]byte{}
+	time.Sleep(time.Millisecond)
 
 	for {
 		b := make([]byte, 512+rand.Intn(16*1024))

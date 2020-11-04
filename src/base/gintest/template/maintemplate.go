@@ -15,6 +15,7 @@ func demo(w http.ResponseWriter, r *http.Request) {
 	t.Funcs(template.FuncMap{
 		"test2": k,
 	})
+
 	t.ParseFiles("src/base/gintest/template/t.tmpl")
 	name := "my zone"
 

@@ -1,21 +1,25 @@
 package main
 
+import "fmt"
+
 type StudentInfo struct {
 	PID       int
 	PPID      int
-	ChildNode []StudentInfo
+	name      string
+	ChildNode []*StudentInfo
 }
-type StuTree struct {
+type PIDNode struct {
 	PID        int
 	StuInfo    *StudentInfo
-	LeftChild  *StuTree
-	RightChild *StuTree
+	LeftChild  *PIDNode
+	RightChild *PIDNode
 }
 
-func SearchStuTree(root *StuTree, PPID int) *StuTree {
+func SearchStuTree(root *PIDNode, PPID int) *PIDNode {
 	if root == nil {
-		return root
+		return nil
 	}
+	//fmt.Println("root",root)
 	if root.PID > PPID {
 		SearchStuTree(root.LeftChild, PPID)
 	} else if root.PID < PPID {
@@ -24,28 +28,59 @@ func SearchStuTree(root *StuTree, PPID int) *StuTree {
 	return root
 }
 
-func main() {
-	Tree := &StuTree{}
-	Data := []StudentInfo{}
-	stu := StudentInfo{1, 2, nil}
-	nodeINFO := &StuTree{stu.PID, &stu, nil, nil}
-	node := SearchStuTree(Tree, stu.PPID)
-	if node == nil {
-		Data = append(Data, stu)
-		node = nodeINFO
-	} else {
-		node.StuInfo.ChildNode = append(node.StuInfo.ChildNode, stu)
-		temp := SearchStuTree(Tree, stu.PID)
-		temp = nodeINFO
+func StuInsert(root *PIDNode, node *PIDNode) {
+	fmt.Printf("stuinserver=%p\n", node)
+	fmt.Printf("stuinserver=%v\n", node)
+	if root.PID > node.PID {
+		if root.LeftChild != nil {
+			StuInsert(root.LeftChild, node)
+		}
+		root.LeftChild = node
+	} else if root.PID < node.PID {
+		if root.RightChild != nil {
+			StuInsert(root.RightChild, node)
+		}
+		root.RightChild = node
 	}
 
-	//stu:= StudentInfo{1,1,nil}
-	//stu.ChildNode=append(stu.ChildNode, StudentInfo{2,1,nil})
-	//stu.ChildNode=append(stu.ChildNode, StudentInfo{3,1,nil})
-	//stu.ChildNode[1].ChildNode=append(stu.ChildNode[1].ChildNode, StudentInfo{3,1,nil})
-	//a,_:=json.Marshal(stu)
-	//fmt.Println(string(a))
-	//
-	//data:=[]StudentInfo{}
+}
 
+func main() {
+	PIDTree := new(PIDNode)
+	Data := []StudentInfo{}
+	//stu := StudentInfo{1, 2,"ralap.z",nil}
+	//nodeINFO := &StuTree{stu.PID, &stu, nil, nil}
+	//node := SearchStuTree(Tree, stu.PPID)
+	nodelist := []StudentInfo{
+		{1, 2, "ralap.z", nil},
+		{2, 1, "test1", nil},
+		{3, 1, "test2", nil},
+		{3, 1, "ralap1", nil}}
+
+	node := new(PIDNode)
+	//fmt.Printf("node1=%p\n",&nodelist[0])
+	//fmt.Println(len(Data))
+	n := 0
+	for k, _ := range nodelist {
+		N := &nodelist[k]
+		//fmt.Printf("N%v=%p\n",n,N)
+		//fmt.Printf("node%v=%p\n",n,&nodelist[k])
+		nodeINFO := &PIDNode{N.PID, N, nil, nil}
+		fmt.Printf("NewNode%v=%v\n", n, nodeINFO)
+		node = SearchStuTree(PIDTree, N.PPID)
+		fmt.Printf("PIDTREE=%v\n", PIDTree)
+		//fmt.Printf("search node=%v\n",node)
+		//if PIDTree==nil{
+		//	fmt.Println("PIDTree is null")
+		//}
+		if node == nil || Data == nil || len(Data) == 0 {
+			Data = append(Data, *N)
+		} else {
+			fmt.Println(node)
+			node.StuInfo.ChildNode = append(node.StuInfo.ChildNode, N)
+		}
+		StuInsert(PIDTree, nodeINFO)
+		n++
+	}
+	fmt.Println(Data)
 }

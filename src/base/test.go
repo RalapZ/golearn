@@ -2,23 +2,20 @@ package main
 
 import "fmt"
 
-type People interface {
-	Speak(string) string
-}
-
-type Student struct{}
-
-func (stu *Student) Speak(think string) (talk string) {
-	if think == "sb" {
-		talk = "你是个大帅比"
-	} else {
-		talk = "您好"
-	}
-	return
+type StudentInfo1 struct {
+	PID       int
+	PPID      int
+	name      string
+	ChildNode []StudentInfo1
 }
 
 func main() {
-	var peo People = &Student{}
-	think := "bitch"
-	fmt.Println(peo.Speak(think))
+	a := &StudentInfo1{}
+	fmt.Printf("a=%p\n", a)
+	b := a
+	fmt.Printf("b=%p\n", b)
+	a = &StudentInfo1{1, 2, "ralap", nil}
+	fmt.Printf("a=%p\n", a)
+	fmt.Printf("b=%p\n", b)
+	fmt.Println(b)
 }

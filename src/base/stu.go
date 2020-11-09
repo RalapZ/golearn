@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type StudentInfo struct {
 	PID       int
@@ -15,32 +18,49 @@ type PIDNode struct {
 	RightChild *PIDNode
 }
 
-func SearchStuTree(root *PIDNode, PPID int) *PIDNode {
+func SearchStuTree(root *PIDNode, PPID int) (TEMPNODE *PIDNode) {
 	if root == nil {
 		return nil
 	}
 	//fmt.Println("root",root)
 	if root.PID > PPID {
-		SearchStuTree(root.LeftChild, PPID)
+		TEMPNODE = SearchStuTree(root.LeftChild, PPID)
 	} else if root.PID < PPID {
-		SearchStuTree(root.RightChild, PPID)
+		TEMPNODE = SearchStuTree(root.RightChild, PPID)
 	}
-	return root
+	return TEMPNODE
 }
 
 func StuInsert(root *PIDNode, node *PIDNode) {
-	fmt.Printf("stuinserver=%p\n", node)
-	fmt.Printf("stuinserver=%v\n", node)
+	//fmt.Printf("stuinsert=%p\n", node)
+	//fmt.Printf("stuinsert=%v\n", node.StuInfo)
+
+	//k,_:=json.Marshal(root)
+	//fmt.Println("stuinsert",string(k))
+	//fmt.Println(node)
 	if root.PID > node.PID {
 		if root.LeftChild != nil {
 			StuInsert(root.LeftChild, node)
+		} else {
+			root.LeftChild = node
 		}
-		root.LeftChild = node
+
 	} else if root.PID < node.PID {
 		if root.RightChild != nil {
 			StuInsert(root.RightChild, node)
+		} else {
+			root.RightChild = node
 		}
-		root.RightChild = node
+	}
+}
+
+func (P *PIDNode) midorder() {
+	fmt.Println(P.PID)
+	if P.LeftChild != nil {
+		P.LeftChild.midorder()
+	}
+	if P.RightChild != nil {
+		P.RightChild.midorder()
 	}
 
 }
@@ -53,9 +73,9 @@ func main() {
 	//node := SearchStuTree(Tree, stu.PPID)
 	nodelist := []StudentInfo{
 		{1, 2, "ralap.z", nil},
-		{2, 1, "test1", nil},
-		{3, 1, "test2", nil},
-		{3, 1, "ralap1", nil}}
+		{3, 1, "test1", nil},
+		{2, 1, "test2", nil},
+		{4, 3, "ralap1", nil}}
 
 	node := new(PIDNode)
 	//fmt.Printf("node1=%p\n",&nodelist[0])
@@ -63,24 +83,31 @@ func main() {
 	n := 0
 	for k, _ := range nodelist {
 		N := &nodelist[k]
+		//fmt.Printf("PIDTREE=%v\n", PIDTree)
 		//fmt.Printf("N%v=%p\n",n,N)
 		//fmt.Printf("node%v=%p\n",n,&nodelist[k])
 		nodeINFO := &PIDNode{N.PID, N, nil, nil}
-		fmt.Printf("NewNode%v=%v\n", n, nodeINFO)
+		fmt.Printf("nodeINFO=%p", nodeINFO)
+		//fmt.Printf("NewNode%v=%v\n", n, nodeINFO.StuInfo)
 		node = SearchStuTree(PIDTree, N.PPID)
-		fmt.Printf("PIDTREE=%v\n", PIDTree)
-		//fmt.Printf("search node=%v\n",node)
-		//if PIDTree==nil{
-		//	fmt.Println("PIDTree is null")
-		//}
+		//k,_:=json.Marshal(PIDTree)
+		//fmt.Println(string(k))
 		if node == nil || Data == nil || len(Data) == 0 {
 			Data = append(Data, *N)
 		} else {
 			fmt.Println(node)
 			node.StuInfo.ChildNode = append(node.StuInfo.ChildNode, N)
 		}
+		//fmt.Println("round",n)
+		fmt.Println("=============================================")
+		fmt.Printf("round%v\n", n)
 		StuInsert(PIDTree, nodeINFO)
+		P, _ := json.Marshal(PIDTree)
+		fmt.Println("PIDTree=", string(P))
 		n++
 	}
+	PIDTree.midorder()
+
+	//fmt.Println(PIDTree.RightChild)
 	fmt.Println(Data)
 }

@@ -33,7 +33,7 @@ func main() {
 	a.ChildNode = append(a.ChildNode, &StudentInfo1{2, 3, "zp", nil})
 	for k, v := range c {
 		fmt.Println(k, v)
-		a.ChildNode = append(a.ChildNode, v)
+		a.ChildNode = append(a.ChildNode, c[k])
 	}
 	bye, _ := json.Marshal(a)
 	fmt.Println(string(bye))

@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	//json "github.com/json-iterator/go"
 )
 
 type StudentInfo struct {
@@ -62,10 +61,6 @@ func (P *PIDNode) midorder() {
 	}
 
 }
-
-//func SetHandler(DATA []*StudentInfo){
-//
-//}
 
 func main() {
 	PIDTree := new(PIDNode)

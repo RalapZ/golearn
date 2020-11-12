@@ -3,9 +3,11 @@ package main
 import (
 	"bytes"
 	"io"
+	"net/http"
+	_ "net/http/pprof"
 )
 
-const debug = false
+const debug = true
 
 type a struct {
 	t int
@@ -21,6 +23,7 @@ func main() {
 	if debug {
 		// ...use buf...
 	}
+	http.ListenAndServe(":6060", nil)
 	//f1:=new(a)
 	//f2:=make([]a,5)
 	//fmt.Printf("%v",f1)

@@ -1,11 +1,24 @@
 package main
 
 import (
-	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"fmt"
+	"log"
 	"net/http"
 )
 
+type db map[string]int
+
+func (db1 db) ServeHTTP(resp http.ResponseWriter, r *http.Request) {
+	log.Println(r)
+	log.Fatal()
+	for k, v := range db1 {
+		fmt.Fprint(resp, k, v)
+	}
+}
+
 func main() {
-	http.Handle("/metrics", promhttp.Handler())
-	http.ListenAndServe(":6060", nil)
+	db1 := db{"shoes": 5,
+		"shift": 6}
+	http.ListenAndServe(":9000", db1)
+
 }

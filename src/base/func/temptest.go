@@ -2,17 +2,17 @@ package main
 
 import "fmt"
 
-type stu struct {
-	name string
-	age  int
+type sum func(a, b int) (s int)
+
+func myzone(a, b int) (s int) {
+	return a + b
 }
 
-func (s *stu) info(b string) {
-	s.name = b
+func test(Sum sum, a, b int) {
+	fmt.Println(Sum(a, b))
 }
 
 func main() {
-	var s stu
-	s.info("test")
-	fmt.Println(s)
+	//a=myzone
+	test(myzone, 1, 2)
 }

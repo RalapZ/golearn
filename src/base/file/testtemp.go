@@ -23,7 +23,7 @@ func main() {
 		}
 		str := string(buf[:i])
 
-		re := regexp.MustCompile("(?s)\\*[0-9][^*]+?INCRBY(?s).+?[^*]*")
+		re := regexp.MustCompile("(?s)\\*[0-9][^*]+?\nLREM(?s).+?[^*]*")
 		//fmt.Println(string(buf[:i]))
 		t := re.FindAllStringSubmatch(str, -1)
 		fmt.Println(t)

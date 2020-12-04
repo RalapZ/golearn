@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"github.com/olivere/elastic/v7"
-	"time"
 )
 
 // Elasticsearch demo
@@ -33,7 +32,7 @@ func main() {
 	}
 	fmt.Println("connect to es success")
 	p1 := Person{Name: "lmh", Age: 18, Married: false}
-	tn := time.Now()
+
 	put1, err := client.Index().
 		Index("user").
 		BodyJson(p1).

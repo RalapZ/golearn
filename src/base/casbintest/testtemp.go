@@ -2,26 +2,25 @@ package main
 
 import (
 	"fmt"
-	"log"
-
 	"github.com/casbin/casbin"
 	xormadapter "github.com/casbin/xorm-adapter"
 	"github.com/gin-gonic/gin"
+	_ "github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func main() {
 	// 要使用自己定义的数据库rbac_db,最后的true很重要.默认为false,使用缺省的数据库名casbin,不存在则创建
-	a, err := xormadapter.NewAdapter("mysql", "root:root@tcp(127.0.0.1:3306)/goblog?charset=utf8", true)
-	if err != nil {
-		log.Printf("连接数据库错误: %v", err)
-		return
-	}
-	e, err := casbin.NewEnforcer("./rbac_models.conf", a)
-	if err != nil {
-		log.Printf("初始化casbin错误: %v", err)
-		return
-	}
+	a := xormadapter.NewAdapter("mysql", "mybog:mybog@tcp(10.10.8.150:3306)/mybog?charset=utf8", true)
+	//if err != nil {
+	//	log.Printf("连接数据库错误: %v", err)
+	//	return
+	//}
+	e := casbin.NewEnforcer("src/base/casbintest/rbac_models.conf", a)
+	//if err != nil {
+	//	log.Printf("初始化casbin错误: %v", err)
+	//	return
+	//}
 	//从DB加载策略
 	e.LoadPolicy()
 
@@ -30,7 +29,7 @@ func main() {
 
 	r.POST("/api/v1/add", func(c *gin.Context) {
 		fmt.Println("增加Policy")
-		if ok, _ := e.AddPolicy("admin", "/api/v1/hello", "GET"); !ok {
+		if ok := e.AddPolicy("admin", "/api/v1/hello", "GET"); !ok {
 			fmt.Println("Policy已经存在")
 		} else {
 			fmt.Println("增加成功")
@@ -39,7 +38,7 @@ func main() {
 	//删除policy
 	r.DELETE("/api/v1/delete", func(c *gin.Context) {
 		fmt.Println("删除Policy")
-		if ok, _ := e.RemovePolicy("admin", "/api/v1/hello", "GET"); !ok {
+		if ok := e.RemovePolicy("admin", "/api/v1/hello", "GET"); !ok {
 			fmt.Println("Policy不存在")
 		} else {
 			fmt.Println("删除成功")
@@ -78,7 +77,7 @@ func Authorize(e *casbin.Enforcer) gin.HandlerFunc {
 		sub := "admin"
 
 		//判断策略中是否存在
-		if ok, _ := e.Enforce(sub, obj, act); ok {
+		if ok := e.Enforce(sub, obj, act); ok {
 			fmt.Println("恭喜您,权限验证通过")
 			c.Next()
 		} else {

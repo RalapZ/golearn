@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package gomicro.proto;
+
+message ZoneRequest{
+    string name=1;
+}
+
+message ZoneResponse{
+    string name=1;
+    repeated string hobby=2;
+}
+
+
+service ZoneInterface{
+    rpc zone(ZoneRequest)returns(ZoneResponse){};
+}

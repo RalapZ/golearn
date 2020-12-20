@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package pb;
+
+service Response{
+    rpc Myfirst(MyzoneReq) returns(MyzoneResp){};
+
+}
+
+message MyzoneReq{
+    string myzonername=1;
+}
+
+message MyzoneResp{
+    string  myzonermessage=1;
+}

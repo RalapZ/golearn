@@ -1,0 +1,21 @@
+syntax="proto3";
+
+
+package hello;
+
+message Request{
+    string name=1;
+
+}
+
+message Response{
+    string name=1;
+    int32 age=2;
+    repeated string hobby=3;
+}
+
+
+
+service PersonInfo{
+    rpc personInfo(Request)returns(Response){};
+}

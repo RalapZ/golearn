@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-12-22T07:14:13.583Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="pQP7GDCrYFaihTa5gq0K" version="14.1.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-12-22T09:33:29.268Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="J1-mpLEnpD5olTr_IlE4" version="14.1.1" type="github">
   <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
-    <mxGraphModel dx="2130" dy="2027" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1956" dy="1894" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -20,8 +20,8 @@
             <mxPoint x="425" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FEIo_0DyeopAGs2rlle1-1" value="prd分支" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="240" y="270" width="80" height="20" as="geometry" />
+        <mxCell id="FEIo_0DyeopAGs2rlle1-1" value="prd/master分支" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="270" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-7" value="创建projectA分支" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="340" y="360" width="80" height="40" as="geometry" />
@@ -204,7 +204,7 @@
         <mxCell id="FEIo_0DyeopAGs2rlle1-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;shape=flexArrow;endWidth=15;endSize=6.33;" edge="1" source="FEIo_0DyeopAGs2rlle1-48" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="343" y="710" as="sourcePoint" />
-            <mxPoint x="1620" y="710" as="targetPoint" />
+            <mxPoint x="1790" y="710" as="targetPoint" />
             <Array as="points">
               <mxPoint x="590" y="710" />
               <mxPoint x="590" y="710" />
@@ -217,7 +217,7 @@
             <mxPoint x="425" y="710" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FEIo_0DyeopAGs2rlle1-48" value="prd分支" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="FEIo_0DyeopAGs2rlle1-48" value="prd/master分支" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="240" y="690" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-49" value="创建projectA分支" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -260,10 +260,10 @@
           <mxGeometry x="720" y="780" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-58" value="发布上线" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="810" y="775" width="50" height="50" as="geometry" />
+          <mxGeometry x="890" y="775" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-59" value="合并prd" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="890" y="780" width="80" height="40" as="geometry" />
+          <mxGeometry x="970" y="780" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-55" target="FEIo_0DyeopAGs2rlle1-57" parent="1">
           <mxGeometry relative="1" as="geometry">
@@ -271,7 +271,7 @@
             <mxPoint x="693" y="810" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FEIo_0DyeopAGs2rlle1-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" target="FEIo_0DyeopAGs2rlle1-58" parent="1">
+        <mxCell id="FEIo_0DyeopAGs2rlle1-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-136" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="780" y="800" as="sourcePoint" />
             <mxPoint x="730" y="810" as="targetPoint" />
@@ -279,8 +279,8 @@
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-59" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="860" y="800" as="sourcePoint" />
-            <mxPoint x="740" y="820" as="targetPoint" />
+            <mxPoint x="940" y="800" as="sourcePoint" />
+            <mxPoint x="820" y="820" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-63" value="" style="endArrow=none;html=1;dashed=1;" edge="1" parent="1">
@@ -300,160 +300,162 @@
         <mxCell id="FEIo_0DyeopAGs2rlle1-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-59" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="580" y="720" as="sourcePoint" />
-            <mxPoint x="930" y="710" as="targetPoint" />
+            <mxPoint x="1010" y="710" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-66" value="创建projectB分支" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="740" y="595" width="80" height="40" as="geometry" />
+          <mxGeometry x="825" y="585" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-67" value="开发" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="840" y="595" width="60" height="40" as="geometry" />
+          <mxGeometry x="925" y="585" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-68" value="merge代码" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
-          <mxGeometry x="930" y="595" width="80" height="40" as="geometry" />
+          <mxGeometry x="1015" y="585" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-66" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="980" y="555" as="sourcePoint" />
-            <mxPoint x="840" y="615" as="targetPoint" />
+            <mxPoint x="1065" y="545" as="sourcePoint" />
+            <mxPoint x="925" y="605" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-67" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="980" y="555" as="sourcePoint" />
-            <mxPoint x="930" y="615" as="targetPoint" />
+            <mxPoint x="1065" y="545" as="sourcePoint" />
+            <mxPoint x="1015" y="605" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-71" value="开发" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1030" y="595" width="60" height="40" as="geometry" />
+          <mxGeometry x="1115" y="585" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-68" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="910" y="625" as="sourcePoint" />
-            <mxPoint x="1030" y="615" as="targetPoint" />
+            <mxPoint x="995" y="615" as="sourcePoint" />
+            <mxPoint x="1115" y="605" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-73" value="打包测试" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="595" width="60" height="40" as="geometry" />
+          <mxGeometry x="1205" y="585" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-74" value="发布上线" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="1210" y="590" width="50" height="50" as="geometry" />
+          <mxGeometry x="1385" y="580" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-75" value="合并prd" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1290" y="595" width="80" height="40" as="geometry" />
+          <mxGeometry x="1470" y="585" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-71" target="FEIo_0DyeopAGs2rlle1-73" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1073" y="625" as="sourcePoint" />
-            <mxPoint x="1093" y="625" as="targetPoint" />
+            <mxPoint x="1158" y="615" as="sourcePoint" />
+            <mxPoint x="1178" y="615" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FEIo_0DyeopAGs2rlle1-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" target="FEIo_0DyeopAGs2rlle1-74" parent="1">
+        <mxCell id="FEIo_0DyeopAGs2rlle1-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" target="FEIo_0DyeopAGs2rlle1-74" parent="1" source="FEIo_0DyeopAGs2rlle1-138">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1180" y="615" as="sourcePoint" />
-            <mxPoint x="1130" y="625" as="targetPoint" />
+            <mxPoint x="1265" y="605" as="sourcePoint" />
+            <mxPoint x="1215" y="615" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-75" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1260" y="615" as="sourcePoint" />
-            <mxPoint x="1140" y="635" as="targetPoint" />
+            <mxPoint x="1440" y="605" as="sourcePoint" />
+            <mxPoint x="1225" y="625" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-79" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="680" y="700" as="sourcePoint" />
-            <mxPoint x="1590" y="710" as="targetPoint" />
+            <mxPoint x="1750" y="700" as="targetPoint" />
             <Array as="points">
               <mxPoint x="680" y="550" />
               <mxPoint x="1040" y="550" />
               <mxPoint x="1590" y="550" />
-              <mxPoint x="1590" y="630" />
+              <mxPoint x="1750" y="550" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-80" value="ProjectB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="560" width="40" height="20" as="geometry" />
+          <mxGeometry x="1085" y="550" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-66" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="780" y="710" as="sourcePoint" />
+            <mxPoint x="865" y="710" as="sourcePoint" />
             <mxPoint x="580" y="790" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-68" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="970" y="700" as="sourcePoint" />
-            <mxPoint x="790" y="645" as="targetPoint" />
+            <mxPoint x="1055" y="710" as="sourcePoint" />
+            <mxPoint x="875" y="635" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="970" y="700" />
+              <mxPoint x="1055" y="690" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-75" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="980" y="710" as="sourcePoint" />
-            <mxPoint x="1330" y="710" as="targetPoint" />
+            <mxPoint x="1075" y="710" as="sourcePoint" />
+            <mxPoint x="1510" y="710" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1330" y="710" />
+              <mxPoint x="1510" y="670" />
+              <mxPoint x="1510" y="670" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-84" value="打包common测试" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1000" y="780" width="60" height="40" as="geometry" />
+          <mxGeometry x="1080" y="780" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-85" value="发布common测试" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="1110" y="775" width="50" height="50" as="geometry" />
+          <mxGeometry x="1190" y="775" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="FEIo_0DyeopAGs2rlle1-84">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1030" y="710" as="sourcePoint" />
+            <mxPoint x="1110" y="710" as="sourcePoint" />
             <mxPoint x="580" y="789.9999999999998" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1030" y="760" />
-              <mxPoint x="1030" y="760" />
+              <mxPoint x="1110" y="760" />
+              <mxPoint x="1110" y="760" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="FEIo_0DyeopAGs2rlle1-84" target="FEIo_0DyeopAGs2rlle1-85">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="870" y="809.9999999999998" as="sourcePoint" />
-            <mxPoint x="899.9999999999995" y="809.9999999999998" as="targetPoint" />
+            <mxPoint x="950" y="809.9999999999998" as="sourcePoint" />
+            <mxPoint x="979.9999999999995" y="809.9999999999998" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1100" y="800" />
-              <mxPoint x="1100" y="800" />
+              <mxPoint x="1180" y="800" />
+              <mxPoint x="1180" y="800" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-89" value="打包common测试" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1400" y="600" width="60" height="40" as="geometry" />
+          <mxGeometry x="1580" y="590" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-90" value="发布common测试" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="1510" y="595" width="50" height="50" as="geometry" />
+          <mxGeometry x="1690" y="585" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-89" target="FEIo_0DyeopAGs2rlle1-90" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1270" y="629.9999999999998" as="sourcePoint" />
-            <mxPoint x="1299.9999999999995" y="629.9999999999998" as="targetPoint" />
+            <mxPoint x="1450" y="619.9999999999998" as="sourcePoint" />
+            <mxPoint x="1479.9999999999995" y="619.9999999999998" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1500" y="620" />
-              <mxPoint x="1500" y="620" />
+              <mxPoint x="1680" y="610" />
+              <mxPoint x="1680" y="610" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="FEIo_0DyeopAGs2rlle1-89">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1430" y="710" as="sourcePoint" />
-            <mxPoint x="1360" y="690" as="targetPoint" />
+            <mxPoint x="1610" y="710" as="sourcePoint" />
+            <mxPoint x="1455" y="690" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1430" y="710" />
+              <mxPoint x="1610" y="670" />
+              <mxPoint x="1610" y="670" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;shape=flexArrow;endWidth=15;endSize=6.33;" edge="1" source="FEIo_0DyeopAGs2rlle1-95" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="423" y="-170" as="sourcePoint" />
-            <mxPoint x="1493" y="-170" as="targetPoint" />
+            <mxPoint x="1730" y="-170" as="targetPoint" />
             <Array as="points">
               <mxPoint x="670" y="-170" />
               <mxPoint x="670" y="-170" />
@@ -466,7 +468,7 @@
             <mxPoint x="505" y="-170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FEIo_0DyeopAGs2rlle1-95" value="prd分支" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="FEIo_0DyeopAGs2rlle1-95" value="prd/master分支" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="320" y="-190" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-96" value="创建projectA分支" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -509,10 +511,10 @@
           <mxGeometry x="800" y="-100" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-105" value="发布上线/common" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="890" y="-105" width="50" height="50" as="geometry" />
+          <mxGeometry x="990" y="-105" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-106" value="合并prd" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="-100" width="80" height="40" as="geometry" />
+          <mxGeometry x="1080" y="-100" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-102" target="FEIo_0DyeopAGs2rlle1-104" parent="1">
           <mxGeometry relative="1" as="geometry">
@@ -520,7 +522,7 @@
             <mxPoint x="773" y="-70" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FEIo_0DyeopAGs2rlle1-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" target="FEIo_0DyeopAGs2rlle1-105" parent="1">
+        <mxCell id="FEIo_0DyeopAGs2rlle1-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" target="FEIo_0DyeopAGs2rlle1-105" parent="1" source="FEIo_0DyeopAGs2rlle1-140">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="860" y="-80" as="sourcePoint" />
             <mxPoint x="810" y="-70" as="targetPoint" />
@@ -528,8 +530,8 @@
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-106" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="940" y="-80" as="sourcePoint" />
-            <mxPoint x="820" y="-60" as="targetPoint" />
+            <mxPoint x="1040" y="-80" as="sourcePoint" />
+            <mxPoint x="920" y="-60" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-110" value="" style="endArrow=none;html=1;dashed=1;" edge="1" parent="1">
@@ -549,102 +551,139 @@
         <mxCell id="FEIo_0DyeopAGs2rlle1-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-106" parent="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="660" y="-160" as="sourcePoint" />
-            <mxPoint x="1020" y="-170" as="targetPoint" />
+            <mxPoint x="1120" y="-170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-113" value="创建projectB分支" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="820" y="-285" width="80" height="40" as="geometry" />
+          <mxGeometry x="915" y="-285" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-114" value="开发" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="920" y="-285" width="60" height="40" as="geometry" />
+          <mxGeometry x="1015" y="-285" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-115" value="merge代码" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
-          <mxGeometry x="1010" y="-285" width="80" height="40" as="geometry" />
+          <mxGeometry x="1105" y="-285" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-113" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1060" y="-325" as="sourcePoint" />
-            <mxPoint x="920" y="-265" as="targetPoint" />
+            <mxPoint x="1155" y="-325" as="sourcePoint" />
+            <mxPoint x="1015" y="-265" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-114" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1060" y="-325" as="sourcePoint" />
-            <mxPoint x="1010" y="-265" as="targetPoint" />
+            <mxPoint x="1155" y="-325" as="sourcePoint" />
+            <mxPoint x="1105" y="-265" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-118" value="开发" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1110" y="-285" width="60" height="40" as="geometry" />
+          <mxGeometry x="1205" y="-285" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-119" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-115" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="990" y="-255" as="sourcePoint" />
-            <mxPoint x="1110" y="-265" as="targetPoint" />
+            <mxPoint x="1085" y="-255" as="sourcePoint" />
+            <mxPoint x="1205" y="-265" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-120" value="打包测试" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1200" y="-285" width="60" height="40" as="geometry" />
+          <mxGeometry x="1295" y="-285" width="60" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-121" value="发布上线/common" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="1290" y="-290" width="50" height="50" as="geometry" />
+          <mxGeometry x="1480" y="-290" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-122" value="合并prd" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1370" y="-285" width="80" height="40" as="geometry" />
+          <mxGeometry x="1560" y="-285" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-118" target="FEIo_0DyeopAGs2rlle1-120" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1153" y="-255" as="sourcePoint" />
-            <mxPoint x="1173" y="-255" as="targetPoint" />
+            <mxPoint x="1248" y="-255" as="sourcePoint" />
+            <mxPoint x="1268" y="-255" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FEIo_0DyeopAGs2rlle1-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" target="FEIo_0DyeopAGs2rlle1-121" parent="1">
+        <mxCell id="FEIo_0DyeopAGs2rlle1-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" target="FEIo_0DyeopAGs2rlle1-121" parent="1" source="FEIo_0DyeopAGs2rlle1-142">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1260" y="-265" as="sourcePoint" />
-            <mxPoint x="1210" y="-255" as="targetPoint" />
+            <mxPoint x="1355" y="-265" as="sourcePoint" />
+            <mxPoint x="1305" y="-255" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-122" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1340" y="-265" as="sourcePoint" />
-            <mxPoint x="1220" y="-245" as="targetPoint" />
+            <mxPoint x="1530" y="-265" as="sourcePoint" />
+            <mxPoint x="1410" y="-245" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-126" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="760" y="-180" as="sourcePoint" />
-            <mxPoint x="1460" y="-170" as="targetPoint" />
+            <mxPoint x="855" y="-180" as="sourcePoint" />
+            <mxPoint x="1670" y="-180" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="760" y="-330" />
-              <mxPoint x="1120" y="-330" />
-              <mxPoint x="1460" y="-330" />
+              <mxPoint x="855" y="-330" />
+              <mxPoint x="1215" y="-330" />
+              <mxPoint x="1670" y="-330" />
+              <mxPoint x="1670" y="-250" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-127" value="ProjectB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1080" y="-320" width="40" height="20" as="geometry" />
+          <mxGeometry x="1175" y="-320" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-113" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="860" y="-170" as="sourcePoint" />
-            <mxPoint x="660" y="-90" as="targetPoint" />
+            <mxPoint x="955" y="-170" as="sourcePoint" />
+            <mxPoint x="755" y="-90" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-129" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" target="FEIo_0DyeopAGs2rlle1-115" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1050" y="-180" as="sourcePoint" />
-            <mxPoint x="870" y="-235" as="targetPoint" />
+            <mxPoint x="1145" y="-180" as="sourcePoint" />
+            <mxPoint x="965" y="-235" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1050" y="-180" />
+              <mxPoint x="1145" y="-180" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="FEIo_0DyeopAGs2rlle1-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="FEIo_0DyeopAGs2rlle1-122" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1060" y="-170" as="sourcePoint" />
-            <mxPoint x="1410" y="-170" as="targetPoint" />
+            <mxPoint x="1250" y="-170" as="sourcePoint" />
+            <mxPoint x="1600" y="-170" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="1410" y="-170" />
+              <mxPoint x="1600" y="-170" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-136" value="预发布" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="805" y="775" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-137" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="FEIo_0DyeopAGs2rlle1-58">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="800" as="sourcePoint" />
+            <mxPoint x="815.0000000000164" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-138" value="预发布" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="580" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" target="FEIo_0DyeopAGs2rlle1-138">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1265" y="605" as="sourcePoint" />
+            <mxPoint x="1385" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-140" value="预发布" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="900" y="-105" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-141" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" target="FEIo_0DyeopAGs2rlle1-140">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="-80.00000000000023" as="sourcePoint" />
+            <mxPoint x="990" y="-80.00000000000023" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-142" value="预发布" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="-290" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FEIo_0DyeopAGs2rlle1-143" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" edge="1" parent="1" target="FEIo_0DyeopAGs2rlle1-142">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1355" y="-265.0000000000002" as="sourcePoint" />
+            <mxPoint x="1480" y="-265.0000000000002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>

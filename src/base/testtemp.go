@@ -1,9 +1,17 @@
 package main
 
-func myfunction(a, b int) (int, int) {
-	return a + b, a - b
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Person struct {
+	Name  string `json:"name"`
+	Hobby string `json:"hobby"`
 }
 
 func main() {
-	myfunction(66, 77)
+	person := Person{Name: "polarisxu", Hobby: "Golang"}
+	m, _ := json.Marshal(person)
+	fmt.Printf("%s", m)
 }

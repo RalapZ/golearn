@@ -20,7 +20,7 @@ require (
 	github.com/chzyer/test v0.0.0-20180213035817-a1ea475d72b1 // indirect
 	github.com/cloudflare/cloudflare-go v0.13.6 // indirect
 	github.com/cncf/udpa/go v0.0.0-20200629203442-efcf912fb354 // indirect
-	github.com/coreos/etcd v3.3.25+incompatible // indirect
+	github.com/coreos/etcd v3.3.25+incompatible
 	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/ef-ds/deque v1.0.4-0.20190904040645-54cb57c252a1 // indirect
@@ -55,6 +55,7 @@ require (
 	github.com/hashicorp/go-sockaddr v1.0.2 // indirect
 	github.com/hashicorp/go-version v1.2.0 // indirect
 	github.com/hashicorp/golang-lru v0.5.4 // indirect
+	github.com/hpcloud/tail v1.0.0
 	github.com/imdario/mergo v0.3.11 // indirect
 	github.com/json-iterator/go v1.1.10 // indirect
 	github.com/kevinburke/ssh_config v0.0.0-20201106050909-4977a11b4351 // indirect
@@ -107,7 +108,7 @@ require (
 	golang.org/x/sys v0.0.0-20201214210602-f9fddec55a1e // indirect
 	golang.org/x/text v0.3.4
 	golang.org/x/time v0.0.0-20201208040808-7e3f01d25324 // indirect
-	golang.org/x/tools v0.0.0-20201215192005-fa10ef0b8743 // indirect
+	golang.org/x/tools v0.0.0-20201215192005-fa10ef0b8743
 	google.golang.org/genproto v0.0.0-20201214200347-8c77b98c765d // indirect
 	google.golang.org/grpc v1.34.0
 	google.golang.org/protobuf v1.24.0

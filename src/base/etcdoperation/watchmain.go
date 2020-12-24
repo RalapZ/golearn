@@ -10,10 +10,10 @@ import (
 
 func main() {
 	var (
-		config             clientv3.Config
-		client             *clientv3.Client
-		err                error
-		kv                 clientv3.KV
+		config clientv3.Config
+		client *clientv3.Client
+		err    error
+		//kv                 clientv3.KV
 		watchStartRevision int64
 		watcher            clientv3.Watcher
 		watchRespChan      <-chan clientv3.WatchResponse
@@ -33,14 +33,15 @@ func main() {
 	}
 
 	// 用于读写etcd的键值对
-	kv = clientv3.NewKV(client)
+	//kv = clientv3.NewKV(client)
 
 	// 模拟etcd中kv的变化
 	go func() {
 		for {
-			kv.Put(context.TODO(), "name", "lesroad")
+			//kv.Put(context.TODO(), "name", "lesroad")
 
-			kv.Delete(context.TODO(), "name")
+			//
+			//kv.Delete(context.TODO(), "name")
 
 			time.Sleep(1 * time.Second)
 		}
@@ -51,7 +52,7 @@ func main() {
 
 	// 启动监听 5秒后关闭
 	ctx, cancelFunc := context.WithCancel(context.TODO())
-	time.AfterFunc(5*time.Second, func() {
+	time.AfterFunc(60*time.Second, func() {
 		fmt.Println("done")
 		cancelFunc()
 	})

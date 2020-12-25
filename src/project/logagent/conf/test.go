@@ -12,8 +12,9 @@ type Config struct {
 }
 
 type Etc1dConfig struct {
-	Address string `ini:"Address"`
-	Timeout int    `ini:"Timeout"`
+	Address   string `ini:"Address"`
+	Timeout   int    `ini:"Timeout"`
+	TopicName string `ini:"TopicName"`
 }
 type Note struct {
 	Content string

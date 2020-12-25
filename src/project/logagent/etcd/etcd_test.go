@@ -27,7 +27,7 @@ func TestInitETCD(t *testing.T) {
 	})
 
 	//watcher:=clientv3.NewWatcher(EtcdClient)
-	watchchan := watcher.Watch(ctx, "ralap", clientv3.WithRev(watchStartRevision))
+	watchchan := watcher.Watch(ctx, "ralap", clientv3.WithRev(0))
 	for w := range watchchan {
 		for k, v := range w.Events {
 			fmt.Println(k, v)

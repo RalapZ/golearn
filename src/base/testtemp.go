@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"reflect"
 )
 
 type LogKafkaConf struct {
@@ -26,5 +27,20 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Printf("%#v\n", conf)
+
+	a := LogtailConf{TopicName: "ralap", PathName: "test1"}
+	b := LogtailConf{TopicName: "ralap", PathName: "test"}
+	if a == b {
+		fmt.Println("match", a, b)
+	} else {
+		fmt.Println("mismatch")
+	}
+	k := []string{"test", "test"}
+	v := []string{"test", "test", "11"}
+	if ok := reflect.DeepEqual(k, v); ok {
+		fmt.Println("match", k, v)
+	} else {
+		fmt.Println("mismatch")
+	}
 
 }

@@ -12,10 +12,9 @@ var (
 	ModelConfChan           chan string
 	LogtailConfigChangeChan chan LogtailConf
 	KafkaConfigChangeChan   chan LogKafkaConf
-
-	EtcdClient         *clientv3.Client
-	watchStartRevision int64
-	Etcdconfig         *EtcdConfig
+	EtcdClient              *clientv3.Client
+	watchStartRevision      int64
+	Etcdconfig              *EtcdConfig
 )
 
 func InitModel(filename string) (err error) {

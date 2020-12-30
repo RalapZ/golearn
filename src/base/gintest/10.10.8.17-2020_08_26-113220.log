@@ -1,0 +1,468 @@
+﻿Last login: Wed Aug 26 11:16:16 2020 from 10.10.85.72
+cobra@Cobra:~$ pwd
+/home/cobra
+cobra@Cobra:~$ ls -lrt
+total 36
+drwxr-xr-x 10 root  root  4096 Aug 25 18:04 cobra
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+drwxr-xr-x  2 cobra cobra 4096 Aug 26 00:39 ??????
+cobra@Cobra:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.9G     0  3.9G   0% /dev
+tmpfs           799M   18M  782M   3% /run
+/dev/sda1       8.2G  4.5G  3.3G  58% /
+tmpfs           3.9G     0  3.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/sda8        30G  126M   28G   1% /home
+/dev/sda5       3.0G  128M  2.7G   5% /var
+/dev/sda7       586M  1.1M  542M   1% /tmp
+tmpfs           799M   28K  799M   1% /run/user/116
+tmpfs           799M   20K  799M   1% /run/user/1000
+/dev/sr0        3.8G  3.8G     0 100% /media/cdrom0
+tmpfs           799M     0  799M   0% /run/user/0
+cobra@Cobra:~$ env | grep -i LANG
+cobra@Cobra:~$ vim ~/.bash_history 
+-bash: vim: command not found
+cobra@Cobra:~$ vi ~/.bash_history 
+su
+su
+su
+su
+su
+su
+su
+localew
+locale
+vi /etc/default/locale
+clear
+locale
+ls -al
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+cobra@Cobra:~$ vi ~/.bash_pro^C   
+cobra@Cobra:~$ cd /etc/profile.d/
+cobra@Cobra:/etc/profile.d$ ls
+bash_completion.sh  vte-2.91.sh
+cobra@Cobra:/etc/profile.d$ ls -lrt
+total 8
+-rw-r--r-- 1 root root  663 Apr 12  2016 bash_completion.sh
+-rw-r--r-- 1 root root 1941 Nov  8  2016 vte-2.91.sh
+cobra@Cobra:/etc/profile.d$ env
+SSH_CONNECTION=10.10.85.191 64303 10.10.8.17 3232
+USER=cobra
+PWD=/etc/profile.d
+HOME=/home/cobra
+SSH_CLIENT=10.10.85.191 64303 3232
+SSH_TTY=/dev/pts/3
+MAIL=/var/mail/cobra
+TERM=vt100
+SHELL=/bin/bash
+SHLVL=1
+LOGNAME=cobra
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+_=/usr/bin/env
+OLDPWD=/home/cobra
+cobra@Cobra:/etc/profile.d$ cat bash_completion.sh 
+# Check for interactive bash and that we haven't already been sourced.
+if [ -n "$BASH_VERSION" -a -n "$PS1" -a -z "$BASH_COMPLETION_COMPAT_DIR" ]; then
+
+# Check for recent enough version of bash.
+bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
+if [ $bmajor -gt 4 ] || [ $bmajor -eq 4 -a $bminor -ge 1 ]; then
+    [ -r "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion" ] && \
+        . "${XDG_CONFIG_HOME:-$HOME/.config}/bash_completion"
+    if shopt -q progcomp && [ -r /usr/share/bash-completion/bash_completion ]; then
+        # Source completion code.
+        . /usr/share/bash-completion/bash_completion
+    fi
+fi
+unset bash bmajor bminor
+
+fi
+cobra@Cobra:/etc/profile.d$ ls -lrt
+total 8
+-rw-r--r-- 1 root root  663 Apr 12  2016 bash_completion.sh
+-rw-r--r-- 1 root root 1941 Nov  8  2016 vte-2.91.sh
+cobra@Cobra:/etc/profile.d$ cat vte-2.91.sh 
+# Copyright © 2006 Shaun McCance <shaunm@gnome.org>
+# Copyright © 2013 Peter De Wachter <pdewacht@gmail.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Not bash or zsh?
+[ -n "$BASH_VERSION" -o -n "$ZSH_VERSION" ] || return 0
+
+# Not an interactive shell?
+[[ $- == *i* ]] || return 0
+
+# Not running under vte?
+[ "${VTE_VERSION:-0}" -ge 3405 ] || return 0
+
+__vte_urlencode() (
+  # This is important to make sure string manipulation is handled
+  # byte-by-byte.
+  LC_ALL=C
+  str="$1"
+  while [ -n "$str" ]; do
+    safe="${str%%[!a-zA-Z0-9/:_\.\-\!\'\(\)~]*}"
+    printf "%s" "$safe"
+    str="${str#"$safe"}"
+    if [ -n "$str" ]; then
+      printf "%%%02X" "'$str"
+      str="${str#?}"
+    fi
+  done
+)
+
+# Print a warning so that anyone who's added this manually to his PS1 can adapt.
+# The function will be removed in a later version.
+__vte_ps1() {
+  echo -n "(__vte_ps1 is obsolete)"
+}
+
+__vte_osc7 () {
+  printf "\033]7;file://%s%s\007" "${HOSTNAME:-}" "$(__vte_urlencode "${PWD}")"
+}
+
+__vte_prompt_command() {
+  local pwd='~'
+  [ "$PWD" != "$HOME" ] && pwd=${PWD/#$HOME\//\~\/}
+  printf "\033]0;%s@%s:%s\007%s" "${USER}" "${HOSTNAME%%.*}" "${pwd}" "$(__vte_osc7)"
+}
+
+case "$TERM" in
+  xterm*|vte*)
+    [ -n "$BASH_VERSION" ] && PROMPT_COMMAND="__vte_prompt_command"
+    [ -n "$ZSH_VERSION"  ] && precmd_functions+=(__vte_osc7)
+    ;;
+esac
+
+true
+cobra@Cobra:/etc/profile.d$ ls -lrt
+total 8
+-rw-r--r-- 1 root root  663 Apr 12  2016 bash_completion.sh
+-rw-r--r-- 1 root root 1941 Nov  8  2016 vte-2.91.sh
+cobra@Cobra:/etc/profile.d$ cd ..
+cobra@Cobra:/etc$ ls -lrt
+total 1072
+-rw-r--r--  1 root root       9 Aug  8  2006 host.conf
+-rw-r--r--  1 root root    2064 Nov 24  2006 netscsid.conf
+-rw-r--r--  1 root root    1343 Jan 10  2007 wodim.conf
+-rw-r--r--  1 root root     771 Jun  9  2012 staff-group-for-usr-local
+-rw-r--r--  1 root root      45 Mar 23  2014 bash_completion
+-rw-r--r--  1 root root     280 Jun 20  2014 fuse.conf
+-rw-r--r--  1 root root     599 May  6  2015 logrotate.conf
+-rw-r--r--  1 root root    4573 Nov 19  2015 zhcon.conf
+-rw-r--r--  1 root root     767 Mar  4  2016 profile
+-rw-r--r--  1 root root    1260 Mar 17  2016 ucf.conf
+-rw-r--r--  1 root root   24301 May  1  2016 mime.types
+-rw-r--r--  1 root root     449 May  1  2016 mailcap.order
+-rw-r--r--  1 root root     604 Jun 27  2016 deluser.conf
+-rw-r--r--  1 root root    5877 Jul  3  2016 presage.xml
+-rw-r--r--  1 root root    2584 Aug  2  2016 gai.conf
+-rw-r--r--  1 root root     433 Aug  5  2016 apg.conf
+-rwxr-xr-x  1 root root     268 Oct 30  2016 rmt
+-rw-r--r--  1 root root      26 Oct 30  2016 libao.conf
+-rw-r--r--  1 root root    4185 Nov 10  2016 analog.cfg
+drwxr-xr-x  2 root root    4096 Nov 11  2016 libpaper.d
+-rw-r--r--  1 root root    1131 Nov 21  2016 dleyna-server-service.conf
+-rw-r--r--  1 root root    2683 Nov 22  2016 sysctl.conf
+drwxr-xr-x  2 root root    4096 Nov 25  2016 udisks2
+-rw-r--r--  1 root root     346 Nov 30  2016 discover-modprobe.conf
+-rw-r--r--  1 root root    5174 Dec 13  2016 manpath.config
+-rw-r--r--  1 root root   19183 Dec 26  2016 services
+-rw-r--r--  1 root root     887 Dec 26  2016 rpc
+-rw-r--r--  1 root root    2932 Dec 26  2016 protocols
+drwxr-xr-x  2 root root    4096 Dec 26  2016 modprobe.d
+-rw-r--r--  1 root root    8769 Jan 11  2017 nanorc
+-rw-r--r--  1 root root      51 Jan 13  2017 vdpau_wrapper.cfg
+drwxr-xr-x  2 root root    4096 Jan 19  2017 rsyslog.d
+-rw-r--r--  1 root root    1963 Jan 19  2017 rsyslog.conf
+-rw-r--r--  1 root root     769 Jan 23  2017 appstream.conf
+-rw-r--r--  1 root root    1018 Jan 23  2017 usb_modeswitch.conf
+drwxr-xr-x  2 root root    4096 Jan 23  2017 usb_modeswitch.d
+-rw-r--r--  1 root root    4781 Jan 24  2017 hdparm.conf
+-rw-r--r--  1 root root    7439 Jan 25  2017 bogofilter.cf
+-rw-r--r--  1 root root     973 Feb  1  2017 mke2fs.conf
+-rw-r--r--  1 root root    4988 Mar 11  2017 rygel.conf
+-rw-r--r--  1 root root   10368 Apr  6  2017 sensors3.conf
+-rw-r--r--  1 root root      34 Apr 10  2017 ld.so.conf
+-rw-r--r--  1 root root     367 Apr 10  2017 bindresvport.blacklist
+-rw-r--r--  1 root root     191 Apr 13  2017 libaudit.conf
+-rw-r--r--  1 root root    4479 Apr 26  2017 drirc
+-rw-r--r--  1 root root    1863 May 16  2017 bash.bashrc
+-rw-r--r--  1 root root    1748 May 16  2017 inputrc
+-rw-r--r--  1 root root    4179 May 17  2017 securetty
+-rw-r--r--  1 root root   10477 May 17  2017 login.defs
+-rw-r--r--  1 root root    2969 May 22  2017 debconf.conf
+-rw-r--r--  1 root root     552 May 27  2017 pam.conf
+-rw-r--r--  1 root root     401 May 30  2017 anacrontab
+-rw-r--r--  1 root root     111 Sep  2  2017 magic.mime
+-rw-r--r--  1 root root     111 Sep  2  2017 magic
+-rw-r--r--  1 root root     722 Oct  7  2017 crontab
+-rw-r--r--  1 root root    4942 Oct 27  2017 wgetrc
+drwxr-xr-x  2 root root    4096 Dec  3  2017 tmpfiles.d
+drwxr-xr-x  2 root root    4096 Dec  3  2017 binfmt.d
+-rw-r--r--  1 root root    2995 Jan 14  2018 locale.alias
+-rw-r--r--  1 root root       4 Feb 24  2018 debian_version
+lrwxrwxrwx  1 root root      21 Feb 24  2018 os-release -> ../usr/lib/os-release
+-rw-r--r--  1 root root     286 Feb 24  2018 motd
+-rw-r--r--  1 root root      19 Feb 24  2018 issue.net
+-rw-r--r--  1 root root      26 Feb 24  2018 issue
+-rw-r--r--  1 root root    3173 Mar  2  2018 reportbug.conf
+drwxr-xr-x  2 root root    4096 Aug 25 17:22 ld.so.conf.d
+drwxr-xr-x  4 root root    4096 Aug 25 17:22 dpkg
+drwxr-xr-x  2 root root   12288 Aug 25 17:22 alternatives
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 opt
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 terminfo
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 selinux
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 update-motd.d
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 skel
+-rw-r--r--  1 root root      73 Aug 25 22:58 shells
+-rw-r--r--  1 root root       0 Aug 25 22:58 environment
+-rw-------  1 root root       0 Aug 25 22:58 subuid-
+-rw-------  1 root root       0 Aug 25 22:58 subgid-
+-rw-r--r--  1 root root    2981 Aug 25 22:58 adduser.conf
+-r--r--r--  1 root root      33 Aug 25 22:58 machine-id
+-rw-r--r--  1 root root     195 Aug 25 22:58 modules
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 calendar
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 cron.hourly
+drwxr-xr-x  3 root root    4096 Aug 25 22:58 iproute2
+drwxr-xr-x  2 root root    4096 Aug 25 22:58 newt
+drwxr-xr-x  7 root root    4096 Aug 25 22:58 network
+-rw-r--r--  1 root root      78 Aug 25 22:58 networks
+-rw-r--r--  1 root root       6 Aug 25 22:58 hostname
+-rw-r--r--  1 root root     204 Aug 25 22:58 hosts
+-rw-r--r--  1 root root    9116 Aug 25 22:58 locale.gen
+-rw-r--r--  1 root root      14 Aug 25 22:59 timezone
+lrwxrwxrwx  1 root root      33 Aug 25 22:59 localtime -> /usr/share/zoneinfo/Asia/Shanghai
+drwxr-xr-x  5 root root    4096 Aug 25 22:59 kernel
+drwxr-xr-x  2 root root    4096 Aug 25 22:59 console-setup
+drwxr-xr-x  2 root root    4096 Aug 25 23:26 discover.conf.d
+drwxr-xr-x  3 root root    4096 Aug 25 23:28 hotplug
+drwxr-xr-x  3 root root    4096 Aug 25 23:28 gss
+drwxr-xr-x  3 root root    4096 Aug 25 23:29 ca-certificates
+-rw-r--r--  1 root root    7431 Aug 25 23:29 ca-certificates.conf
+drwxr-xr-x  4 root root    4096 Aug 25 23:29 fonts
+drwxr-xr-x  2 root root    4096 Aug 25 23:29 gtk-2.0
+drwxr-xr-x  2 root root    4096 Aug 25 23:29 gtk-3.0
+-rw-r--r--  1 root root     411 Aug 25 23:29 hosts.allow
+-rw-r--r--  1 root root     711 Aug 25 23:29 hosts.deny
+drwxr-xr-x  3 root root    4096 Aug 25 23:29 apm
+drwxr-xr-x  3 root root    4096 Aug 25 23:29 resolvconf
+drwxr-xr-x  4 root root    4096 Aug 25 23:30 chromium
+drwxr-xr-x  5 root root    4096 Aug 25 23:30 polkit-1
+drwxr-xr-x  4 root root    4096 Aug 25 23:30 logcheck
+drwxr-xr-x  4 root root    4096 Aug 25 23:30 ghostscript
+drwxr-xr-x  3 root root    4096 Aug 25 23:30 gimp
+drwxr-xr-x  3 root root    4096 Aug 25 23:31 ifplugd
+drwxr-xr-x  3 root root    4096 Aug 25 23:31 ufw
+drwxr-xr-x  3 root root    4096 Aug 25 23:31 pm
+-rw-r--r--  1 root root       3 Aug 25 23:32 papersize
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 groff
+drwxr-xr-x  3 root root    4096 Aug 25 23:32 mysql
+drwxr-xr-x  3 root root    4096 Aug 25 23:32 emacs
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 gnome-chess
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 openal
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 wildmidi
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 profile.d
+drwxr-xr-x  4 root root    4096 Aug 25 23:32 security
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 icedtea-web
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 sensors.d
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 cron.d
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 cron.monthly
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 cron.weekly
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 timidity
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 libnl-3
+drwxr-xr-x  5 root root    4096 Aug 25 23:32 xdg
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 UPower
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 geoclue
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 python
+drwxr-xr-x  4 root root    4096 Aug 25 23:32 speech-dispatcher
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 cracklib
+drwxr-xr-x  3 root root    4096 Aug 25 23:32 java
+drwxr-xr-x  8 root root    4096 Aug 25 23:32 NetworkManager
+drwxr-xr-x  3 root root    4096 Aug 25 23:32 avahi
+-rw-r--r--  1 root root     540 Aug 25 23:32 nsswitch.conf
+drwxr-xr-x  3 root root    4096 Aug 25 23:32 sgml
+drwxr-xr-x  3 root root    4096 Aug 25 23:32 xml
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 python3
+drwxr-xr-x  2 root root    4096 Aug 25 23:32 gnome
+drwxr-xr-x  6 root root    4096 Aug 25 23:33 apt
+drwxr-xr-x  2 root root    4096 Aug 25 23:33 cupshelpers
+drwxr-xr-x 10 root root    4096 Aug 25 23:33 X11
+drwxr-xr-x  2 root root    4096 Aug 25 23:33 dictionaries-common
+drwxr-xr-x  2 root root    4096 Aug 25 23:34 grub.d
+-rw-r--r--  1 root root     144 Aug 25 23:41 kernel-img.conf
+-rw-------  1 root root    1127 Aug 25 23:41 shadow-
+-rw-------  1 root root    1993 Aug 25 23:41 passwd-
+-rw-------  1 root root     729 Aug 25 23:41 gshadow-
+-rw-------  1 root root     868 Aug 25 23:41 group-
+-rw-r--r--  1 root root      19 Aug 25 23:41 subuid
+-rw-r--r--  1 root root      19 Aug 25 23:41 subgid
+-rw-r--r--  1 root root    2001 Aug 25 23:41 passwd
+-rw-r-----  1 root shadow  1224 Aug 25 23:41 shadow
+-rw-r--r--  1 root root     873 Aug 25 23:41 group
+-rw-r-----  1 root shadow   734 Aug 25 23:41 gshadow
+lrwxrwxrwx  1 root root      19 Aug 25 23:41 mtab -> ../proc/self/mounts
+drwxr-xr-x  3 root root    4096 Aug 26 00:00 vmware-caf
+drwxr-xr-x  2 root root    4096 Aug 26 00:00 rc1.d
+drwxr-xr-x  2 root root    4096 Aug 26 00:00 pulse
+drwxr-xr-x  5 root root    4096 Aug 26 00:01 initramfs-tools
+-rw-r--r--  1 root root    1073 Aug 26 00:01 fstab
+drwxr-xr-x  2 root root    4096 Aug 26 00:07 rc5.d
+drwxr-xr-x  2 root root    4096 Aug 26 00:07 rc4.d
+drwxr-xr-x  2 root root    4096 Aug 26 00:07 rc3.d
+drwxr-xr-x  2 root root    4096 Aug 26 00:07 rc2.d
+drwxr-xr-x  2 root root    4096 Aug 26 06:59 rcS.d
+drwxr-xr-x  2 root root    4096 Aug 26 06:59 rc6.d
+drwxr-xr-x  2 root root    4096 Aug 26 06:59 rc0.d
+drwxr-xr-x  2 root root    4096 Aug 26 06:59 modules-load.d
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 ImageMagick-6
+-rw-r--r--  1 root root   47932 Aug 26 07:00 mailcap
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 ldap
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 sysctl.d
+drwxr-xr-x  4 root root    4096 Aug 26 07:00 perl
+drwxr-xr-x  4 root root    4096 Aug 26 07:00 udev
+drwxr-xr-x  5 root root    4096 Aug 26 07:00 systemd
+drwxr-xr-x  4 root root    4096 Aug 26 07:00 ssl
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 python2.7
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 python3.5
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 vim
+drwxr-s---  2 root dip     4096 Aug 26 07:00 chatscripts
+drwxr-xr-x  7 root dip     4096 Aug 26 07:00 ppp
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 wpa_supplicant
+drwxr-xr-x  4 root root    4096 Aug 26 07:00 dhcp
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 firefox-esr
+drwxr-xr-x  4 root root    4096 Aug 26 07:00 dbus-1
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 bluetooth
+drwxr-xr-x  3 root root    4096 Aug 26 07:00 sane.d
+drwxr-xr-x  2 root root    4096 Aug 26 07:00 bash_completion.d
+drwxr-xr-x  5 root root    4096 Aug 26 07:00 java-8-openjdk
+drwxr-xr-x  8 root root    4096 Aug 26 07:01 apache2
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 cron.daily
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 logrotate.d
+drwxr-xr-x  6 root root    4096 Aug 26 07:01 gdm3
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 insserv.conf.d
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 init.d
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 init
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 pam.d
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 PackageKit
+drwxr-xr-x  4 root root    4096 Aug 26 07:01 apparmor.d
+drwxr-xr-x  2 root root    4096 Aug 26 07:01 libreoffice
+-rw-r--r--  1 root root   99978 Aug 26 07:01 ld.so.cache
+drwxr-xr-x  2 root root    4096 Aug 26 11:09 default
+drwxr-xr-x  2 root root    4096 Aug 26 11:14 ssh
+lrwxrwxrwx  1 root root      35 Aug 26 11:14 resolv.conf -> /var/run/NetworkManager/resolv.conf
+drwxr-xr-x  6 root root    4096 Aug 26 11:14 vmware-tools
+cobra@Cobra:/etc$ cat profile
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ "`id -u`" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+else
+  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+fi
+export PATH
+
+if [ "${PS1-}" ]; then
+  if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ "`id -u`" -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+cobra@Cobra:/etc$ cat profile^C
+cobra@Cobra:/etc$ su -
+Password: 
+su: Authentication failure
+cobra@Cobra:/etc$ su -
+Password: 
+root@Cobra:~# vi /etc/profile
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ "`id -u`" -eq 0 ]; then
+  PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+else
+  PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+fi
+export PATH
+
+if [ "${PS1-}" ]; then
+  if [ "${BASH-}" ] && [ "$BASH" != "/bin/sh" ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+      . /etc/bash.bashrc
+    fi
+  else
+      PS1='# '
+      PS1='$ '
+    fi
+  fi
+fi
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+      . $i
+    fi
+
+
+  done
+  unset i
+fi
+export LANG=zh_CN.UTF-8
+"/etc/profile" 35 lines, 791 characters written
+root@Cobra:~# 注销
+cobra@Cobra:/etc$ logout

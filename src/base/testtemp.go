@@ -1,46 +1,76 @@
 package main
 
 import (
-	"encoding/json"
+	"bytes"
 	"fmt"
-	"reflect"
+	"runtime"
+	"strconv"
+	"sync"
+	"time"
 )
 
-type LogKafkaConf struct {
-	LogtailConf []LogtailConf `json:"logtail"`
-	KafkaConf   KafkaConf     `json:"kafka"`
-}
-type LogtailConf struct {
-	TopicName string `json:"topicname"`
-	PathName  string `json:"pathname"`
+func getGID() uint64 {
+	b := make([]byte, 64)
+	b = b[:runtime.Stack(b, false)]
+	b = bytes.TrimPrefix(b, []byte("goroutine "))
+	b = b[:bytes.IndexByte(b, ' ')]
+	n, _ := strconv.ParseUint(string(b), 10, 64)
+	return n
 }
 
-type KafkaConf struct {
-	Address string `json:"address"`
+func trace() func() {
+	pc, _, _, ok := runtime.Caller(1)
+	if !ok {
+		panic("not found caller")
+	}
+
+	fn := runtime.FuncForPC(pc)
+	name := fn.Name()
+	id := getGID()
+	return func() { fmt.Printf("g[%02d]: exit %s\n", id, name) }
+}
+
+func A1() {
+	defer trace()()
+	B1()
+}
+
+func B1() {
+	defer trace()()
+	C1()
+}
+
+func C1() {
+	defer trace()()
+	D()
+}
+
+func D() {
+	defer trace()()
+}
+
+func A2() {
+	defer trace()()
+	B2()
+}
+func B2() {
+	defer trace()()
+	C2()
+}
+func C2() {
+	defer trace()()
+	D()
 }
 
 func main() {
-	var conf LogKafkaConf
-	str1 := `{"logtail":[{"topicname":"ralap","pathname":"xxxx"},{"topicname":"myzone","pathname":"xxxx"}],"kafka":{"address":"10.10.8.150:2379"}}`
-	err := json.Unmarshal([]byte(str1), &conf)
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Printf("%#v\n", conf)
+	var wg sync.WaitGroup
+	wg.Add(1)
+	go func() {
+		A2()
+		wg.Done()
+	}()
 
-	a := LogtailConf{TopicName: "ralap", PathName: "test1"}
-	b := LogtailConf{TopicName: "ralap", PathName: "test"}
-	if a == b {
-		fmt.Println("match", a, b)
-	} else {
-		fmt.Println("mismatch")
-	}
-	k := []string{"test", "test"}
-	v := []string{"test", "test", "11"}
-	if ok := reflect.DeepEqual(k, v); ok {
-		fmt.Println("match", k, v)
-	} else {
-		fmt.Println("mismatch")
-	}
-
+	time.Sleep(time.Millisecond * 50)
+	A1()
+	wg.Wait()
 }

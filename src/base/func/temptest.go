@@ -2,17 +2,17 @@ package main
 
 import "fmt"
 
-type sum func(a, b int) (s int)
-
-func myzone(a, b int) (s int) {
-	return a + b
+func create() (fs [2]func()) {
+	for i := 0; i < 2; i++ {
+		fs[i] = func() {
+			fmt.Println(i)
+		}
+	}
+	return
 }
-
-func test(Sum sum, a, b int) {
-	fmt.Println(Sum(a, b))
-}
-
 func main() {
-	//a=myzone
-	test(myzone, 1, 2)
+	fs := create()
+	for i := 0; i < len(fs); i++ {
+		fs[i]()
+	}
 }

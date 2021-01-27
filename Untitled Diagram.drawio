@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-27T11:49:41.404Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="Rq7C6Bb2BolVXm28hs5R" version="14.1.9" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-01-27T11:50:52.456Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="FplXP5LlN5LHCSUCx0pI" version="14.1.9" type="github" pages="5">
   <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
     <mxGraphModel dx="1278" dy="1656" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
@@ -1965,7 +1965,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ZS_7Vm8N7-8kYOIIOm_p" name="cicd/cmdb/配置中心">
-    <mxGraphModel dx="2105" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2653" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="CmOULxNABHvbyuS6iRN2-0" />
         <mxCell id="CmOULxNABHvbyuS6iRN2-1" parent="CmOULxNABHvbyuS6iRN2-0" />
@@ -2023,7 +2023,7 @@
         <mxCell id="WxDPyTHcXHqhN1Ws_Ig6-7" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="T16ktJyffan1w6abIwIE-41">
           <mxGeometry x="45" y="250" width="10" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="T16ktJyffan1w6abIwIE-43" value="SQL提交" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="CmOULxNABHvbyuS6iRN2-1" vertex="1">
+        <mxCell id="T16ktJyffan1w6abIwIE-43" value="数据平台" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="CmOULxNABHvbyuS6iRN2-1" vertex="1">
           <mxGeometry x="827" y="80" width="100" height="1070" as="geometry" />
         </mxCell>
         <mxCell id="T16ktJyffan1w6abIwIE-44" value="" style="endArrow=open;endFill=1;endSize=12;html=1;" parent="CmOULxNABHvbyuS6iRN2-1" target="T16ktJyffan1w6abIwIE-40" edge="1">
@@ -2367,6 +2367,12 @@
         </mxCell>
         <mxCell id="T16ktJyffan1w6abIwIE-146" value="生产环境" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="CmOULxNABHvbyuS6iRN2-1" vertex="1">
           <mxGeometry x="-110" y="1360" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="WxDPyTHcXHqhN1Ws_Ig6-8" value="cmdb" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="CmOULxNABHvbyuS6iRN2-1">
+          <mxGeometry x="1010" y="80" width="100" height="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="WxDPyTHcXHqhN1Ws_Ig6-9" value="监控平台" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="CmOULxNABHvbyuS6iRN2-1">
+          <mxGeometry x="1170" y="80" width="100" height="1070" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

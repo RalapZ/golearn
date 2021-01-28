@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-27T12:10:12.218Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="49LbVYYl9gft6l--RGUg" version="14.2.7" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2021-01-28T02:30:26.277Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="hk5dj_PoK1ow6ILr7xC1" version="14.2.7" type="github" pages="5">
   <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
-    <mxGraphModel dx="782" dy="1546" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="1656" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1097,7 +1097,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="84k1QawlUYyQtgPFq9Mf" name="安全防护">
-    <mxGraphModel dx="782" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="7PQCM0e4sOuZq7jCfmQk-0" />
         <mxCell id="7PQCM0e4sOuZq7jCfmQk-1" parent="7PQCM0e4sOuZq7jCfmQk-0" />
@@ -1192,7 +1192,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p8YrjEDKvdsBUaII5P7I" name="发布流水线">
-    <mxGraphModel dx="782" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1278" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="i-d3AIlcSjifIeYF6vk4-0" />
         <mxCell id="i-d3AIlcSjifIeYF6vk4-1" parent="i-d3AIlcSjifIeYF6vk4-0" />
@@ -1896,7 +1896,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ZS_7Vm8N7-8kYOIIOm_p" name="cicd/cmdb/配置中心">
-    <mxGraphModel dx="1609" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2105" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="CmOULxNABHvbyuS6iRN2-0" />
         <mxCell id="CmOULxNABHvbyuS6iRN2-1" parent="CmOULxNABHvbyuS6iRN2-0" />
@@ -2302,8 +2302,11 @@
         <mxCell id="WxDPyTHcXHqhN1Ws_Ig6-8" value="cmdb" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="CmOULxNABHvbyuS6iRN2-1" vertex="1">
           <mxGeometry x="1010" y="80" width="100" height="1070" as="geometry" />
         </mxCell>
-        <mxCell id="WxDPyTHcXHqhN1Ws_Ig6-9" value="监控平台" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="CmOULxNABHvbyuS6iRN2-1" vertex="1">
+        <mxCell id="WxDPyTHcXHqhN1Ws_Ig6-9" value="日志平台" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="CmOULxNABHvbyuS6iRN2-1" vertex="1">
           <mxGeometry x="1170" y="80" width="100" height="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="Rj7x6NNhbKUUdoKry5aw-0" value="监控平台" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" vertex="1" parent="CmOULxNABHvbyuS6iRN2-1">
+          <mxGeometry x="1290" y="80" width="100" height="1070" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

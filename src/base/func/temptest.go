@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func create() (fs [2]func()) {
 	for i := 0; i < 2; i++ {

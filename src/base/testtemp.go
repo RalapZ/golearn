@@ -1,19 +1,12 @@
 package main
 
-import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
-	"runtime"
-)
+import "fmt"
 
 func main() {
-	//trace.Start(os.Stderr)
-	//defer trace.Stop()
-	num := 6
-	for index := 0; index < num; index++ {
-		resp, _ := http.Get("https://www.baidu.com")
-		_, _ = ioutil.ReadAll(resp.Body)
+	//s := []int{0, 1, 2, 3, 4, 5, 6, 7, 8}
+	slen := 10
+	n := slen / 2
+	for i := n; i >= 0; i-- {
+		fmt.Println(i)
 	}
-	fmt.Printf("此时goroutine个数= %d\n", runtime.NumGoroutine())
 }

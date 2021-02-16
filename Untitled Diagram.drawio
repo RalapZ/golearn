@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-16T08:30:53.917Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="7IFt6XoL-UBNm4pIm9VR" version="14.3.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-02-16T08:37:07.261Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="WSASLKsmfFmxNFkLQx8H" version="14.3.0" type="github" pages="6">
   <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
     <mxGraphModel dx="5190" dy="3880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
@@ -2498,6 +2498,30 @@
         </mxCell>
         <mxCell id="-Gn6Khe90T7T_x2FsV9D-59" value="kafka/mq&lt;br&gt;mysql等中间件" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66FFFF;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
           <mxGeometry x="1820" y="410" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-60" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66FF66;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1275" y="290" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-61" value="DeepBlueDB/taskser/&lt;br&gt;自动化运维" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF33;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1288" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-62" value="CMDB" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1275" y="260" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-63" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66FF66;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1425" y="290" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-64" value="DeepBlue monitor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF33;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1438" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-65" value="监控中心" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1420" y="260" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-66" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66FF66;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1590" y="291" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-Gn6Khe90T7T_x2FsV9D-67" value="DeepBlue CICD" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF33;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="1602.5" y="300" width="120" height="61" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

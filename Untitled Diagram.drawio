@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-16T08:11:49.412Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="hD91FC2dUkltNkgieK3p" version="14.3.0" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2021-02-16T08:15:23.717Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="Tl6X7DY_CJNx47FKPMu9" version="14.3.0" type="github" pages="6">
   <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
     <mxGraphModel dx="5190" dy="3880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
@@ -1896,7 +1896,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ZS_7Vm8N7-8kYOIIOm_p" name="cicd/cmdb/配置中心">
-    <mxGraphModel dx="4979" dy="2224" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4287" dy="1853" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="CmOULxNABHvbyuS6iRN2-0" />
         <mxCell id="CmOULxNABHvbyuS6iRN2-1" parent="CmOULxNABHvbyuS6iRN2-0" />
@@ -2311,16 +2311,13 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="Uhm2uqXJqlVGDrqjfCCC" name="Page-6">
+  <diagram id="Uhm2uqXJqlVGDrqjfCCC" name="系统规划">
     <mxGraphModel dx="1221" dy="654" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="oJYquoPxabZox_ueOitb-0" />
         <mxCell id="oJYquoPxabZox_ueOitb-1" parent="oJYquoPxabZox_ueOitb-0" />
-        <mxCell id="D_WP8s87ALrq6BaQASgs-0" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
-          <mxGeometry x="44" y="180" width="370" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="D_WP8s87ALrq6BaQASgs-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
-          <mxGeometry x="44" y="280" width="370" height="60" as="geometry" />
+        <mxCell id="D_WP8s87ALrq6BaQASgs-0" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#33FF33;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="oJYquoPxabZox_ueOitb-1">
+          <mxGeometry x="50" y="290" width="110" height="330" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -18,10 +18,28 @@
 //##################################################################################################//
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+	_ "net/http/pprof"
+	"os"
+	"os/signal"
+	"syscall"
+)
 
 func main() {
-	if "34" < "3" {
-		fmt.Println("true")
+	go func() {
+		http.ListenAndServe("127.0.0.1:8080", nil)
+	}()
+	s := make(chan os.Signal, 1)
+	signal.Notify(s, syscall.SIGINT, syscall.SIGTERM)
+	c := make(chan int)
+	select {
+	case <-c:
+	case <-s:
+		fmt.Println("program stopped")
+
 	}
+	fmt.Println("exit")
+
 }
